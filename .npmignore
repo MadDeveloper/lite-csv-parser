@@ -1,0 +1,7 @@
+.prettierrc
+*.js.gz
+*.csv
+*.html
+parser.js
+index.js
+node_modules/

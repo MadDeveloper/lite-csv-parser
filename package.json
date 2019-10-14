@@ -1,16 +1,24 @@
 {
-  "name": "csv-parser",
+  "name": "lite-csv-parser",
   "version": "1.0.0",
-  "description": "",
-  "main": "parser.build.js",
+  "description": "A lite csv parser using promises",
+  "main": "build.js",
   "scripts": {
     "start": "nodemon .",
     "start:prod": "npm run build && node .",
     "build": "babel parser.js --out-file build.js --presets=babel-preset-minify",
-    "build:watch": "babel parser.js --watch --out-file parser.build.js --presets=babel-preset-minify && npm run compress",
+    "build:watch": "babel parser.js --watch --out-file build.js --presets=babel-preset-minify && npm run compress",
     "compress": "gzip < build.js > build.js.gz"
   },
-  "keywords": [],
+  "keywords": [
+    "csv",
+    "parser",
+    "promise",
+    "lite",
+    "node",
+    "browser",
+    "umd"
+  ],
   "author": "",
   "license": "MIT",
   "devDependencies": {
