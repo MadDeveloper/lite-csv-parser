@@ -1,6 +1,6 @@
 {
   "name": "lite-csv-parser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A lite csv parser using promises",
   "main": "build.js",
   "scripts": {
@@ -19,7 +19,15 @@
     "browser",
     "umd"
   ],
-  "author": "",
+  "author": {
+    "email": "sergent.julien@icloud.com",
+    "name": "Julien Sergent",
+    "url": "https://juliensergent.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MadDeveloper/lite-csv-parser.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.6.4",
