@@ -12,7 +12,7 @@ The package does not currently support stream parsing.
 ```js
 import parseCSV from "lite-csv-parser"
 // or
-const parseCSV from "lite-csv-parser"
+const parseCSV = require("lite-csv-parser")
 // or (only browser)
 <script src="path/to/node_modules/lite-csv-parser/build.js"></script>
 <script>

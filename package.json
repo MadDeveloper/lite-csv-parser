@@ -1,6 +1,6 @@
 {
   "name": "lite-csv-parser",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "A very light csv parser using promises",
   "main": "build.js",
   "scripts": {
