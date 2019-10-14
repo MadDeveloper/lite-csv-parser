@@ -13,6 +13,6 @@ fs.readFile("./input.csv", { encoding: "utf-8" })
   })
   .then(output => {
     console.log(`Duration: ${(performance.now() - startTime).toFixed(4)} ms`)
-    // console.log(output)
+    console.log(output[output.length - 1])
   })
   .catch(console.error)

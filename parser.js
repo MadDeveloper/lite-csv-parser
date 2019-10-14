@@ -7,14 +7,22 @@
     root.parseCSV = factory()
   }
 })(typeof self !== "undefined" ? self : this, function() {
-  function parseCSV(input, options) {
+  return (input, options) => {
     options = options || {}
     options.separator = options.separator || ","
     options.withHeaders = options.withHeaders || true
 
     return new Promise((resolve, reject) => {
       try {
-        var allLines = input.split("\n")
+        var allLines = input
+          .replace(/\r/gm, "")
+          .replace(/^\s*\n?$/gm, "")
+          .split("\n")
+
+        if (allLines[allLines.length - 1] === "") {
+          allLines.pop()
+        }
+
         var headers = options.withHeaders ? allLines[0].split(",") : []
         var lines = headers.length > 0 ? allLines.slice(1) : allLines
         var values =
@@ -33,6 +41,4 @@
       }
     })
   }
-
-  return parseCSV
 })

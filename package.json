@@ -4,11 +4,11 @@
   "description": "A very light csv parser using promises",
   "main": "build.js",
   "scripts": {
-    "start": "nodemon .",
-    "start:prod": "npm run build && node .",
+    "start": "nodemon index.js",
+    "start:prod": "npm run build && node index.js",
     "build": "babel parser.js --out-file build.js --presets=babel-preset-minify",
     "build:watch": "babel parser.js --watch --out-file build.js --presets=babel-preset-minify && npm run compress",
-    "compress": "gzip < build.js > build.js.gz"
+    "compress": "gzip --best < build.js > build.js.gz"
   },
   "keywords": [
     "csv",
@@ -32,10 +32,9 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.6.4",
-    "@babel/core": "^7.6.4",
-    "@babel/preset-env": "^7.6.3",
-    "babel-preset-minify": "^0.5.1",
-    "nodemon": "^1.19.3"
+    "@babel/cli": "7.6.4",
+    "@babel/core": "7.6.4",
+    "babel-preset-minify": "0.5.1",
+    "nodemon": "1.19.3"
   }
 }
