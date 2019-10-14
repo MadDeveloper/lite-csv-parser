@@ -14,7 +14,7 @@
 
     return new Promise((resolve, reject) => {
       try {
-        var allLines = input
+        const allLines = input
           .replace(/\r/gm, "")
           .replace(/^\s*\n?$/gm, "")
           .split("\n")
@@ -23,9 +23,9 @@
           allLines.pop()
         }
 
-        var headers = options.withHeaders ? allLines[0].split(",") : []
-        var lines = headers.length > 0 ? allLines.slice(1) : allLines
-        var values =
+        const headers = options.withHeaders ? allLines[0].split(",") : []
+        const lines = headers.length > 0 ? allLines.slice(1) : allLines
+        const values =
           headers.length > 0
             ? lines.map(line =>
                 line.split(options.separator).reduce((acc, value, index) => {
