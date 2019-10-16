@@ -1,9 +1,9 @@
 # lite-csv-parser
 
-`lite-csv-parser` is a **very light** csv parser using promises (**< 600B**, **< 450B** gzipped), with no dependencies.
+`lite-csv-parser` is a **very light** csv parser using promises (**< 700B**, **< 450B** gzipped), with no dependencies.
 
 As the package is using the UMD format, it can be used in any environment (Node, browser, ...).
-The environment must support `Array.prototype.map()` and `Array.prototype.reduce()` (e.g. IE 11, node 0.12.18).
+The environment must support `Promise` (or can include a polyfill).
 
 The package does not currently support stream parsing.
 

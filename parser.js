@@ -7,12 +7,12 @@
     root.parseCSV = factory()
   }
 })(typeof self !== "undefined" ? self : this, function() {
-  return (input, options) => {
+  return function(input, options) {
     options = options || {}
     options.separator = options.separator || ","
     options.withHeaders = options.withHeaders || true
 
-    return new Promise((resolve, reject) => {
+    return new Promise(function(resolve, reject) {
       try {
         const allLines = input
           .replace(/\r/gm, "")
@@ -27,13 +27,17 @@
         const lines = headers.length > 0 ? allLines.slice(1) : allLines
         const values =
           headers.length > 0
-            ? lines.map(line =>
-                line.split(options.separator).reduce((acc, value, index) => {
-                  acc[headers[index]] = value
-                  return acc
-                }, {})
-              )
-            : lines.map(line => line.split(separator))
+            ? lines.map(function(line) {
+                return line
+                  .split(options.separator)
+                  .reduce(function(acc, value, index) {
+                    acc[headers[index]] = value
+                    return acc
+                  }, {})
+              })
+            : lines.map(function(line) {
+                return line.split(separator)
+              })
 
         resolve(values)
       } catch (error) {
